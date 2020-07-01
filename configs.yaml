@@ -1,0 +1,31 @@
+
+batch_size: 64
+shuffle: True
+num_workers: 0
+
+data_path: "data/tang .npz"
+pickle_path: "json"
+epoch: 40
+author: None
+constrain: None
+category: "poet.tang"
+lr: 0.001
+weight_decay: 1e-4
+maxlen: 150
+plot_every: 20
+
+embedding_dim: 128
+hidden_dim: 1024
+LSTM_layers: 3
+
+max_gen_len: 200
+model_path: None
+prefix_words: "细雨鱼儿出， 微风燕子斜。"
+start_words: "闲云潭影日悠悠"
+acrostic: False
+model_prefix: "./checkpoints/tang"
+tensorboard_path: "./tensorboard"
+debug_file: "debugp"
+step_size: 10
+lr_gamma: 0.1
+model_save_path: "./checkpoints/tmp"

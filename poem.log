@@ -1,0 +1,27 @@
+nohup: ignoring input
+(tensor([8291, 6731, 4770, 1787, 8118, 7577, 7066, 4817,  648, 7121, 1542, 6483,
+        7435, 7686, 2889, 1671, 5862, 1949, 7066, 2596, 4785, 3629, 1379, 2703,
+        7435, 6064, 6041, 4666, 4038, 4881, 7066, 4747, 1534,   70, 3788, 3823,
+        7435, 4907, 5567,  201, 2834, 1519, 7066,  782,  782, 2063, 2031,  846]), tensor([6731, 4770, 1787, 8118, 7577, 7066, 4817,  648, 7121, 1542, 6483, 7435,
+        7686, 2889, 1671, 5862, 1949, 7066, 2596, 4785, 3629, 1379, 2703, 7435,
+        6064, 6041, 4666, 4038, 4881, 7066, 4747, 1534,   70, 3788, 3823, 7435,
+        4907, 5567,  201, 2834, 1519, 7066,  782,  782, 2063, 2031,  846, 7435]))
+Traceback (most recent call last):
+  File "tmp.py", line 120, in <module>
+    model.load_state_dict(torch.load(Config.model_save_path+"/tmppoem.pth"))
+  File "/home/ubuntu/.conda/envs/wangqiang_env/lib/python3.6/site-packages/torch/nn/modules/module.py", line 847, in load_state_dict
+    self.__class__.__name__, "\n\t".join(error_msgs)))
+RuntimeError: Error(s) in loading state_dict for MyPoetryModel_tanh:
+	size mismatch for lstm.weight_ih_l0: copying a param with shape torch.Size([1024, 128]) from checkpoint, the shape in current model is torch.Size([4096, 128]).
+	size mismatch for lstm.weight_hh_l0: copying a param with shape torch.Size([1024, 256]) from checkpoint, the shape in current model is torch.Size([4096, 1024]).
+	size mismatch for lstm.bias_ih_l0: copying a param with shape torch.Size([1024]) from checkpoint, the shape in current model is torch.Size([4096]).
+	size mismatch for lstm.bias_hh_l0: copying a param with shape torch.Size([1024]) from checkpoint, the shape in current model is torch.Size([4096]).
+	size mismatch for lstm.weight_ih_l1: copying a param with shape torch.Size([1024, 256]) from checkpoint, the shape in current model is torch.Size([4096, 1024]).
+	size mismatch for lstm.weight_hh_l1: copying a param with shape torch.Size([1024, 256]) from checkpoint, the shape in current model is torch.Size([4096, 1024]).
+	size mismatch for lstm.bias_ih_l1: copying a param with shape torch.Size([1024]) from checkpoint, the shape in current model is torch.Size([4096]).
+	size mismatch for lstm.bias_hh_l1: copying a param with shape torch.Size([1024]) from checkpoint, the shape in current model is torch.Size([4096]).
+	size mismatch for lstm.weight_ih_l2: copying a param with shape torch.Size([1024, 256]) from checkpoint, the shape in current model is torch.Size([4096, 1024]).
+	size mismatch for lstm.weight_hh_l2: copying a param with shape torch.Size([1024, 256]) from checkpoint, the shape in current model is torch.Size([4096, 1024]).
+	size mismatch for lstm.bias_ih_l2: copying a param with shape torch.Size([1024]) from checkpoint, the shape in current model is torch.Size([4096]).
+	size mismatch for lstm.bias_hh_l2: copying a param with shape torch.Size([1024]) from checkpoint, the shape in current model is torch.Size([4096]).
+	size mismatch for fc1.weight: copying a param with shape torch.Size([2048, 256]) from checkpoint, the shape in current model is torch.Size([2048, 1024]).
